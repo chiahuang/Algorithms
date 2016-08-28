@@ -1,6 +1,11 @@
+'''
+Sorting can also solve to check whether it is permutation but O(n log n) depending on the sorting algorithm
+
+'''
+
 def isPermutation(word: str, other:str) -> bool:
     '''
-
+    With Data Structure
     :param word: str
     :param other: str
     :return:
