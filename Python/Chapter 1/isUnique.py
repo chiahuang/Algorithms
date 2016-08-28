@@ -1,10 +1,12 @@
-def isUnique(string: str) -> bool:
+def isUniqueW(string: str) -> bool:
     '''
-    Without Data Structure
+    With Data Structure
     :param string:
     :return: bool
     '''
-    if len(string) > 128:
+    if string is None:
+        return False
+    if len(string) > 128 or string == "":
         return False
 
     array = [False for _ in range(128)]
@@ -14,27 +16,32 @@ def isUnique(string: str) -> bool:
         array[ord(character)] = True
     return True
 
-def isUniqueW(string: str) -> bool:
+
+def isUnique(string: str) -> bool:
     '''
-    With Data Structure
+    Without Data Structure
     :param string:
     :return: bool
     '''
+    if string == "" or string is None: return False
     return len(set(string)) == len(string)
 
 
-
 if __name__ == "__main__":
-    start = ('==' * 20) ; print(start)
-
-    print(isUnique("Hello"))
-    print(isUnique("Raymond"))
-    print(isUnique("Python"))
-
-    print('\n')
+    start = ('==' * 20);
+    print(start)
 
     print(isUniqueW("Hello"))
     print(isUniqueW("Raymond"))
     print(isUniqueW("Python"))
+    print(isUniqueW(None))
 
-    end = '==' * 20 ; print(end)
+    print('\n')
+
+    print(isUnique("Hello"))
+    print(isUnique("Raymond"))
+    print(isUnique("Python"))
+    print(isUnique(None))
+
+    end = '==' * 20;
+    print(end)

@@ -5,6 +5,8 @@ def reverseString(word: str, recursion: bool = False) -> str:
     :param recursion: bool
     :return:
     '''
+    if word is None:
+        return ""
     if recursion:
         if word == "":
             return ""
@@ -14,15 +16,14 @@ def reverseString(word: str, recursion: bool = False) -> str:
         return word[::-1]
 
 
-
 if __name__ == "__main__":
-    start = ('==' * 20);
+    start = ('==' * 20)
     print(start)
 
     print(reverseString("Hello", True))
     print(reverseString("Raymond", True))
     print(reverseString("Python", True))
-
+    print(reverseString(None))
     print('\n')
 
     print(reverseString("Hello"))
