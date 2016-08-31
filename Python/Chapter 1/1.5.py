@@ -4,17 +4,21 @@ def compression(word: str) -> str:
     :param word: str
     :return: str
     '''
+    if word == "" or word is None:
+        return ""
     size = len(word) - 1
     index = 1
     count = 1
     result = ""
+
     while(index <= size):
         if index == size:
-            count +=1
+            count =1
             result += ''.join(word[index - 1] + str(count))
 
         if word[index - 1] == word[index]:
             count += 1
+            result += ''.join(word[index - 1] + str(count))
         else:
             result += ''.join(word[index-1] + str(count))
             count = 1
@@ -23,6 +27,8 @@ def compression(word: str) -> str:
     return result
 
 def compressionW(word: str) -> str:
+    if word == "" or word is None:
+        return ""
     curchar = word[0]
     count = 0
     result = []
@@ -46,7 +52,13 @@ if __name__ == "__main__":
     print('==' * 20)
 
     print(compression("aabcccccaaa"))
+    print(compression("aabbcchhddkks"))
+    print(compression(""))
+    print(compression(None))
     print(compressionW("aabcccccaaa"))
+    print(compressionW("aabbcchhddkks"))
+    print(compressionW(""))
+    print(compressionW(None))
 
 
 
