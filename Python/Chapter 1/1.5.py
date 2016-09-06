@@ -7,6 +7,25 @@ def compress(word: str) -> str:
     if word == "" or word is None:
         return ""
 
+    count = 0
+    currChar = ""
+    result = ""
+    for character in word:
+        if currChar == "":
+            currChar = character
+            count += 1
+
+        elif character != currChar:
+            result += ''.join(currChar + str(count))
+            currChar = character
+            count = 1
+        else:
+            count +=1
+    result += ''.join(currChar + str(count))
+
+    return result
+
+
 
 def compression(word: str) -> str:
     '''
@@ -60,6 +79,10 @@ def compressionW(word: str) -> str:
 if __name__ == "__main__":
     print('==' * 20)
 
+    print(compress("aabcccccaaa"))
+    print(compress("aabbcchhddkks"))
+    print(compress(""))
+    print(compress(None))
     print(compression("aabcccccaaa"))
     print(compression("aabbcchhddkks"))
     print(compression(""))
