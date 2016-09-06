@@ -1,29 +1,36 @@
+def compress(word: str) -> str:
+    '''
+    for loop
+    :param word:
+    :return:
+    '''
+    if word == "" or word is None:
+        return ""
+
+
 def compression(word: str) -> str:
     '''
-    Without Data Structure
+    Without Data Structure - While loop
     :param word: str
     :return: str
     '''
     if word == "" or word is None:
         return ""
-    size = len(word) - 1
+    size = len(word)
     index = 1
     count = 1
     result = ""
 
-    while(index <= size):
-        if index == size:
-            count =1
-            result += ''.join(word[index - 1] + str(count))
-
+    while(index < size):
         if word[index - 1] == word[index]:
             count += 1
-            result += ''.join(word[index - 1] + str(count))
         else:
             result += ''.join(word[index-1] + str(count))
             count = 1
 
         index += 1
+
+    result += ''.join(word[index - 1] + str(count))
     return result
 
 def compressionW(word: str) -> str:
@@ -47,6 +54,8 @@ def compressionW(word: str) -> str:
     for key, value in result:
         temp += ''.join(key + str(value))
     return temp
+
+
 
 if __name__ == "__main__":
     print('==' * 20)
