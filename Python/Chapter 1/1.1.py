@@ -19,7 +19,7 @@ def isUniqueW(string: str) -> bool:
 
 def isUnique(string: str) -> bool:
     '''
-    Without Data Structure
+    Without Data Structure ??? set is a data-structure...
     :param string:
     :return: bool
     '''
@@ -31,17 +31,11 @@ if __name__ == "__main__":
     start = ('==' * 20);
     print(start)
 
-    print(isUniqueW("Hello"))
-    print(isUniqueW("Raymond"))
-    print(isUniqueW("Python"))
-    print(isUniqueW(None))
+    list_of_strings = ["Hello", "Raymond", "Python", None]
 
-    print('\n')
+    for string in list_of_strings:
+        print("Result of (isUniqueW) & (isUnique): ", isUniqueW(string), isUnique(string))
 
-    print(isUnique("Hello"))
-    print(isUnique("Raymond"))
-    print(isUnique("Python"))
-    print(isUnique(None))
 
     end = '==' * 20;
     print(end)
