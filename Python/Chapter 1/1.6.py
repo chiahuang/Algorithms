@@ -5,9 +5,14 @@ def matrix(column: int, row: int) -> list:
     place?
     :param column: int
     :param row: int
-    :return: [[int]]
+    :return: list
     '''
     image = [[r for r in range(row)] for c in range(column)]
+
+    print(image)
+
+
+
 
     return image
 
