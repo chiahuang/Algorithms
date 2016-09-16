@@ -7,9 +7,10 @@ def matrix(column: int, row: int) -> list:
     :param row: int
     :return: list
     '''
-    image = [[r for r in range(row)] for c in range(column)]
+    image = [[row * c + r + 1 for r in range(row)] for c in range(column)]
 
-    print(image)
+    
+
 
 
 
